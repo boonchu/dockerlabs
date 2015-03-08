@@ -1,4 +1,4 @@
-###### Start with simple docker 
+###### Start with simple docker on Vagrant
 
 * git clone from repository
 * install [vagrant](http://www.vagrantup.com/downloads.html)
