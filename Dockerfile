@@ -1,5 +1,5 @@
 FROM centos
-MAINTAINER shin1x1 <shin1x1@gmail.com>
+MAINTAINER bigchoo <bigchoo@gmail.com>
 
 #
 # httpd
