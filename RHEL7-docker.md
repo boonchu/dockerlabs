@@ -24,6 +24,21 @@ rhel-server-docker-7.0-23.x86_64     latest              bef54b8f8a2f        9 m
 rhel-server-docker-6.5-12.x86_64     latest              8dc6a04270df        9 months ago        151.5 MB
 server1.cracker.org:5000/myrhel6.5   latest              8dc6a04270df        9 months ago        151.5 MB
 ```
+* pushes docker images to remote docker registry
+```
+- change the option on /etc/sysconfig/docker if you see error with unknown CA cert https issue 
+OPTIONS=--selinux-enabled -H fd:// --insecure-registry server1.cracker.org:5000
+
+- restart docker service
+
+- pushes the image
+$ sudo docker push server1.cracker.org:5000/myrhel7.0
+The push refers to a repository [server1.cracker.org:5000/myrhel7.0] (len: 1)
+Sending image list
+Pushing repository server1.cracker.org:5000/myrhel7.0 (1 tags)
+Image bef54b8f8a2f already pushed, skipping
+Pushing tag for rev [bef54b8f8a2f] on {http://server1.cracker.org:5000/v1/repositories/myrhel7.0/tags/latest}
+```
 * after container runs the command, it shows the IP address 172.17.0.3/16 and other related to ethernet info.
 ```
 bigchoo@vmk2 1026 $ sudo docker run -v /usr/sbin:/usr/sbin -i -t --rm server1.cracker.org:5000/myrhel7.0 /usr/sbin/ip addr show eth0
