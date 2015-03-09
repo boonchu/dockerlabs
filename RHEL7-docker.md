@@ -124,6 +124,18 @@ $ sudo docker ps -l
 CONTAINER ID        IMAGE                                     COMMAND                CREATED             STATUS                      PORTS               NAMES
 3a75faa81424        rhel-server-docker-7.0-23.x86_64:latest   "/bin/python -m Simp   About an hour ago   Exited (-1) 4 seconds ago                       python_web
 ```
+* kill docker container
+```
+$ sudo docker kill --signal="SIGKILL" python_web
+python_web
+
+$ curl http://localhost:8000
+curl: (7) Failed connect to localhost:8000; Connection refused
+
+$ sudo docker ps -l
+CONTAINER ID        IMAGE                                     COMMAND                CREATED             STATUS                      PORTS               NAMES
+3a75faa81424        rhel-server-docker-7.0-23.x86_64:latest   "/bin/python -m Simp   About an hour ago   Exited (-1) 6 seconds ago                       python_web
+```
 * how to enter into an active container
 ```
 - get active State PID from container name 
