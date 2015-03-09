@@ -9,7 +9,7 @@ $ sudo systemctl start docker.service && sudo systemctl enable docker.service
 $ getenforce
 Enforcing
 ```
-* setup remote docker resgistry
+* setup remote docker resgistry (recommended nginx for proxies and nfs for storage)
 ```
 TBD
 ```
