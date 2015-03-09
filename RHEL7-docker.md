@@ -26,7 +26,7 @@ server1.cracker.org:5000/myrhel6.5   latest              8dc6a04270df        9 m
 ```
 * pushes docker images to remote docker registry
 ```
-- change the option on /etc/sysconfig/docker if you see error with unknown CA cert https issue 
+- change the option on /etc/sysconfig/docker if you see error with unknown CA cert https issue while you push it.
 OPTIONS=--selinux-enabled -H fd:// --insecure-registry server1.cracker.org:5000
 
 - restart docker service
