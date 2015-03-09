@@ -9,7 +9,11 @@ $ sudo systemctl start docker.service && sudo systemctl enable docker.service
 $ getenforce
 Enforcing
 ```
-* deploys docker images to local docker registry
+* setup remote docker resgistry
+```
+TBD
+```
+* deploys docker images to remote docker registry
 ```
 bigchoo@vmk2 1022 $ sudo docker load -i ./rhel-server-docker-7.0-23.x86_64.tar.gz
 bigchoo@vmk2 1024 $ sudo docker tag bef54b8f8a2f server1.cracker.org:5000/myrhel7.0
