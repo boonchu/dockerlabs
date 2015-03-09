@@ -4,6 +4,10 @@
 $ sudo systemctl stop firewalld && sudo systemctl disable firewalld
 $ sudo systemctl start docker.service && sudo systemctl enable docker.service
 ```
+* recommend to enable selinux security on docker host
+```
+$ getenforce
+```
 * deploys docker images to local docker registry
 ```
 bigchoo@vmk2 1022 $ sudo docker load -i ./rhel-server-docker-7.0-23.x86_64.tar.gz
