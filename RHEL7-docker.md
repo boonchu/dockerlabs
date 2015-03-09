@@ -46,6 +46,7 @@ Pushing repository server1.cracker.org:5000/myrhel6.5 (1 tags)
 8dc6a04270df: Image successfully pushed
 Pushing tag for rev [8dc6a04270df] on {http://server1.cracker.org:5000/v1/repositories/myrhel6.5/tags/latest}
 ```
+* noted to follow the [instruction to install cert file](https://github.com/docker/docker/issues/9118) if you have valid cert.
 * after container runs the command, it shows the IP address 172.17.0.3/16 and other related to ethernet info.
 ```
 bigchoo@vmk2 1026 $ sudo docker run -v /usr/sbin:/usr/sbin -i -t --rm server1.cracker.org:5000/myrhel7.0 /usr/sbin/ip addr show eth0
