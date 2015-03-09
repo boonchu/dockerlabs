@@ -49,7 +49,9 @@ Pushing tag for rev [8dc6a04270df] on {http://server1.cracker.org:5000/v1/reposi
 * noted to follow the [instruction to install cert file](https://github.com/docker/docker/issues/9118) if you have valid cert.
 * after container runs the command, it shows the IP address 172.17.0.3/16 and other related to ethernet info.
 ```
-bigchoo@vmk2 1026 $ sudo docker run -v /usr/sbin:/usr/sbin -i -t --rm server1.cracker.org:5000/myrhel7.0 /usr/sbin/ip addr show eth0
+bigchoo@vmk2 1026 $ sudo docker run -v /usr/sbin:/usr/sbin \
+  -i -t --rm server1.cracker.org:5000/myrhel7.0 \
+  /usr/sbin/ip addr show eth0
 6: eth0: <NO-CARRIER,BROADCAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state DOWN qlen 1000
     link/ether 02:42:ac:11:00:03 brd ff:ff:ff:ff:ff:ff
     inet 172.17.0.3/16 scope global eth0
