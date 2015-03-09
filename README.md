@@ -3,7 +3,7 @@
 * [Using Vagrant to deploy docker](https://github.com/boonchu/dockerlabs/tree/master/Vagrant)
 * Developing code with docker
 
-###### Setup Private Docker Registry
+###### Setup [Private Docker Registry](https://github.com/docker/docker-registry/blob/master/README.md)
 * CentOS 7 come with Docker registry. Registry listens to port 5000.
 ```
 $ sudo systemctl status docker-registry
