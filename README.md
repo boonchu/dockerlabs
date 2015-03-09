@@ -100,8 +100,7 @@ root@3a75faa81424 3 $ ip a
     inet6 fe80::42:acff:fe11:2/64 scope link
        valid_lft forever preferred_lft forever
 ```
-* create new image
-```
+###### Create new image
 * clean everything to save some spaces and inactive images
 ```
 $ sudo docker rm $(sudo docker ps -a -q)
@@ -110,5 +109,9 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 ```
 * ensure to have clean container. test new image with apache httpd and remove it.
 ```
-$ sudo docker run --name="t_httpd" -v /etc/yum.repos.d:/etc/yum.repos.d -i --rm server1.cracker.org:5000/myrhel7.0 /bin/bash -c "yum clean all; yum update -y -nogpgcheck; yum install --nogpgcheck -y httpd; yum clean all"
+$ sudo docker run --name="t_httpd" -v /etc/yum.repos.d:/etc/yum.repos.d \
+   -i --rm server1.cracker.org:5000/myrhel7.0 /bin/bash \
+   -c "yum clean all; yum update -y -nogpgcheck; \
+   yum install --nogpgcheck -y httpd; yum clean all"
+   
 ```
