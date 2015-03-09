@@ -77,3 +77,8 @@ Mar 09 09:09:01 vmk2.cracker.org logger[2875]: Testing from docker container
 bigchoo@vmk2 1018 $ sudo docker inspect --format='{{.NetworkSettings.IPAddress}}' python_web
 172.17.0.2
 ```
+* example 5: using inspect to return the container port binding info
+```
+bigchoo@vmk2 1019 $ sudo docker inspect --format='{{.HostConfig.PortBindings}}' python_web
+map[8000/tcp:[map[HostIp: HostPort:8000]]]
+```
