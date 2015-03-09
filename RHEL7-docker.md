@@ -109,10 +109,38 @@ bigchoo@vmk2 1018 $ sudo docker inspect --format='{{.NetworkSettings.IPAddress}}
 bigchoo@vmk2 1019 $ sudo docker inspect --format='{{.HostConfig.PortBindings}}' python_web
 map[8000/tcp:[map[HostIp: HostPort:8000]]]
 ```
-###### docker commands
+###### docker for DevOps
 * start docker container
 ```
 $ sudo docker start python_web
 python_web
 ```
+* how to enter to active container
+```
+- get active State PID from container name 
+bigchoo@vmk2 1011 $ sudo docker inspect --format='{{.State.Pid}}' python_web
+2715
 
+- enter the container pyhton_web
+bigchoo@vmk2 1013 $ sudo nsenter -m -u -n -i -p -t 2715 /bin/bash
+
+- investigate the container
+root@3a75faa81424 2 $ free -m
+              total        used        free      shared  buff/cache   available
+Mem:           1840         215        1353           8         271        1472
+Swap:          1535           0        1535
+
+root@3a75faa81424 3 $ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+4: eth0: <BROADCAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP qlen 1000
+    link/ether 02:42:ac:11:00:02 brd ff:ff:ff:ff:ff:ff
+    inet 172.17.0.2/16 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::42:acff:fe11:2/64 scope link
+       valid_lft forever preferred_lft forever
+```
