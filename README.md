@@ -63,6 +63,14 @@ $ sudo docker ps -l
 CONTAINER ID        IMAGE                                     COMMAND                CREATED             STATUS                      PORTS               NAMES
 3a75faa81424        rhel-server-docker-7.0-23.x86_64:latest   "/bin/python -m Simp   About an hour ago   Exited (-1) 6 seconds ago                       python_web
 ```
+* how to remove docker container
+```
+$ sudo docker stop python_web
+python_web
+
+$ sudo docker rm python_web
+python_web
+```
 * how to enter into an active container
 ```
 - get active State PID from container name 
