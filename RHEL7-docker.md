@@ -38,6 +38,13 @@ Sending image list
 Pushing repository server1.cracker.org:5000/myrhel7.0 (1 tags)
 Image bef54b8f8a2f already pushed, skipping
 Pushing tag for rev [bef54b8f8a2f] on {http://server1.cracker.org:5000/v1/repositories/myrhel7.0/tags/latest}
+
+$ sudo docker push server1.cracker.org:5000/myrhel6.5
+The push refers to a repository [server1.cracker.org:5000/myrhel6.5] (len: 1)
+Sending image list
+Pushing repository server1.cracker.org:5000/myrhel6.5 (1 tags)
+8dc6a04270df: Image successfully pushed
+Pushing tag for rev [8dc6a04270df] on {http://server1.cracker.org:5000/v1/repositories/myrhel6.5/tags/latest}
 ```
 * after container runs the command, it shows the IP address 172.17.0.3/16 and other related to ethernet info.
 ```
