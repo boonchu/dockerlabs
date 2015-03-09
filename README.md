@@ -35,7 +35,7 @@ local:
 drwxr-xr-x. root root system_u:object_r:var_lib_t:s0   images
 drwxr-xr-x. root root system_u:object_r:var_lib_t:s0   repositories
 ```
-###### [Using Red Hat Enterprise 7.x with Docker](https://github.com/boonchu/dockerlabs/blob/master/RHEL7-docker.md)
+###### Using [Red Hat Enterprise 7.x with Docker](https://github.com/boonchu/dockerlabs/blob/master/RHEL7-docker.md)
 ###### docker for DevOps
 * start docker container
 ```
