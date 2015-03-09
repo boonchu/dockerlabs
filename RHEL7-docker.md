@@ -30,3 +30,32 @@ bigchoo@vmk2 1026 $ sudo docker run -v /usr/sbin:/usr/sbin -i -t --rm server1.cr
     inet6 fe80::42:acff:fe11:3/64 scope link tentative
        valid_lft forever preferred_lft forever
 ```
+* try with simple http service python2.x module
+```
+- create new index.html file
+bigchoo@vmk2 1012 $ cat /var/www/html/index.html
+<html>
+  <body>
+        <h1>hello world</h1>
+  </body>
+</html>
+- run docker from port 8000
+bigchoo@vmk2 1008 $ sudo docker run -d -p 8000:8000 --name="python_web"  -v /usr/sbin:/usr/sbin -v /usr/bin:/usr/bin -v /usr/lib64:/usr/lib64   -w /var/www/html -v /var/www/html:/var/www/html server1.cracker.org:5000/myrhel7.0  /bin/python -m SimpleHTTPServer 8000
+3a75faa814243ec6dddbed5ab42b6412663735a0e08622b7c41dfb29499422ae
+- check docker running process
+bigchoo@vmk2 1009 $ sudo docker ps -a
+CONTAINER ID        IMAGE                                     COMMAND                CREATED             STATUS              PORTS                    NAMES
+3a75faa81424        rhel-server-docker-7.0-23.x86_64:latest   "/bin/python -m Simp   10 seconds ago      Up 9 seconds        0.0.0.0:8000->8000/tcp   python_web
+- check service listener port
+bigchoo@vmk2 1010 $ sudo lsof -i :8000
+COMMAND  PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+docker  2783 root    4u  IPv6  22086      0t0  TCP *:irdmi (LISTEN)
+- curl for testing
+bigchoo@vmk2 1011 $ curl localhost:8000
+<html>
+  <body>
+        <h1>hello world</h1>
+  </body>
+</html>
+
+```
