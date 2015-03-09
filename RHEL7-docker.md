@@ -1,4 +1,4 @@
-###### Noted from RHEL7
+###### Noted from RHEL7 docker container setup
 * turn off firewalld and start docker service
 ```
 $ sudo systemctl stop firewalld && sudo systemctl disable firewalld
@@ -109,3 +109,10 @@ bigchoo@vmk2 1018 $ sudo docker inspect --format='{{.NetworkSettings.IPAddress}}
 bigchoo@vmk2 1019 $ sudo docker inspect --format='{{.HostConfig.PortBindings}}' python_web
 map[8000/tcp:[map[HostIp: HostPort:8000]]]
 ```
+###### docker commands
+* start docker container
+```
+$ sudo docker start python_web
+python_web
+```
+
