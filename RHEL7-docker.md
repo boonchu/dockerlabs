@@ -72,3 +72,8 @@ bigchoo@vmk2 1014 $ sudo docker run --name="log_test" -v /dev/log:/dev/log --rm 
 bigchoo@vmk2 1015 $ sudo journalctl -b | grep Testing
 Mar 09 09:09:01 vmk2.cracker.org logger[2875]: Testing from docker container
 ```
+* example 4: using inspect to return the private IP address on container end
+```
+bigchoo@vmk2 1018 $ sudo docker inspect --format='{{.NetworkSettings.IPAddress}}' python_web
+172.17.0.2
+```
