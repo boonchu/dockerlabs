@@ -30,7 +30,7 @@ bigchoo@vmk2 1026 $ sudo docker run -v /usr/sbin:/usr/sbin -i -t --rm server1.cr
     inet6 fe80::42:acff:fe11:3/64 scope link tentative
        valid_lft forever preferred_lft forever
 ```
-* try with simple http service python2.x module
+* example 2: simple http service python2.x module
 ```
 - create new index.html file
 bigchoo@vmk2 1012 $ cat /var/www/html/index.html
@@ -62,4 +62,13 @@ bigchoo@vmk2 1011 $ curl localhost:8000
   </body>
 </html>
 
+```
+* example 3: logger service
+```
+- run docker and dump message via logger 
+bigchoo@vmk2 1014 $ sudo docker run --name="log_test" -v /dev/log:/dev/log --rm server1.cracker.org:5000/myrhel7.0 logger "Testing from docker container"
+
+- check messages from journalctl
+bigchoo@vmk2 1015 $ sudo journalctl -b | grep Testing
+Mar 09 09:09:01 vmk2.cracker.org logger[2875]: Testing from docker container
 ```
