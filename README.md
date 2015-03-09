@@ -115,3 +115,24 @@ $ sudo docker run --name="t_httpd" -v /etc/yum.repos.d:/etc/yum.repos.d \
    yum install --nogpgcheck -y httpd; yum clean all"
    
 ```
+* check the image status and commit it
+$ sudo docker ps -l
+CONTAINER ID        IMAGE                                     COMMAND                CREATED              STATUS                      PORTS               NAMES
+171e49e42ea8        rhel-server-docker-7.0-23.x86_64:latest   "/bin/bash -c 'yum c   About a minute ago   Exited (0) 34 seconds ago                       t_httpd
+[11:26 Mon Mar 09] ~
+
+$ sudo docker commit -m "t_httpd_chg1" -a "Boonchu Ngam" 171e49e42ea8 rhel_httpd
+ed2decab231e11b6691519f5b440dffcd49f8a5a6be9f0abaddbab5416342be6
+
+$ sudo docker images
+REPOSITORY                           TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+rhel_httpd                           latest              ed2decab231e        11 seconds ago      177.2 MB
+server1.cracker.org:5000/myrhel6.5   latest              8dc6a04270df        9 months ago        151.5 MB
+rhel-server-docker-6.5-12.x86_64     latest              8dc6a04270df        9 months ago        151.5 MB
+rhel-server-docker-7.0-23.x86_64     latest              bef54b8f8a2f        9 months ago        139.6 MB
+server1.cracker.org:5000/myrhel7.0   latest              bef54b8f8a2f        9 months ago        139.6 MB
+```
+* run the container
+```
+$ sudo docker run -p 8080:80 --rm -i rhel_httpd:latest /usr/sbin/httpd -DFOREGROUND
+```
