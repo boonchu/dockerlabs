@@ -47,7 +47,7 @@ Pushing repository server1.cracker.org:5000/myrhel6.5 (1 tags)
 Pushing tag for rev [8dc6a04270df] on {http://server1.cracker.org:5000/v1/repositories/myrhel6.5/tags/latest}
 ```
 * noted to follow the [instruction to install cert file](https://github.com/docker/docker/issues/9118) if you have valid cert.
-* after container runs the command, it shows the IP address 172.17.0.3/16 and other related to ethernet info.
+* example 1: [enter, exit, clean] after container runs the command, it shows the IP address 172.17.0.3/16 and other related to ethernet info and exit.
 ```
 bigchoo@vmk2 1026 $ sudo docker run -v /usr/sbin:/usr/sbin \
   -i -t --rm server1.cracker.org:5000/myrhel7.0 \
@@ -60,7 +60,7 @@ bigchoo@vmk2 1026 $ sudo docker run -v /usr/sbin:/usr/sbin \
     inet6 fe80::42:acff:fe11:3/64 scope link tentative
        valid_lft forever preferred_lft forever
 ```
-* example 2: simple http service python2.x module
+* example 2: [run as daemon] simple http service python2.x module
 ```
 - create new index.html file
 bigchoo@vmk2 1012 $ cat /var/www/html/index.html
