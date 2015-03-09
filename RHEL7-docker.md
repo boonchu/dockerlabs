@@ -115,7 +115,7 @@ map[8000/tcp:[map[HostIp: HostPort:8000]]]
 $ sudo docker start python_web
 python_web
 ```
-* how to enter to active container
+* how to enter into an active container
 ```
 - get active State PID from container name 
 bigchoo@vmk2 1011 $ sudo docker inspect --format='{{.State.Pid}}' python_web
