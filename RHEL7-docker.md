@@ -7,6 +7,7 @@ $ sudo systemctl start docker.service && sudo systemctl enable docker.service
 * recommend to enable selinux security on docker host
 ```
 $ getenforce
+Enforcing
 ```
 * deploys docker images to local docker registry
 ```
