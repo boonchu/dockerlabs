@@ -138,7 +138,6 @@ server1.cracker.org:5000/myrhel7.0   latest              bef54b8f8a2f        9 m
 $ sudo docker run -p 8080:80 --rm -i rhel_httpd:latest /usr/sbin/httpd -DFOREGROUND
 ```
 ###### Building Docker images
-```
 * build own Dockerfile
 ```
 $ cat Dockerfile
