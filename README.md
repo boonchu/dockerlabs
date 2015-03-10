@@ -137,3 +137,24 @@ server1.cracker.org:5000/myrhel7.0   latest              bef54b8f8a2f        9 m
 ```
 $ sudo docker run -p 8080:80 --rm -i rhel_httpd:latest /usr/sbin/httpd -DFOREGROUND
 ```
+###### Building Docker images
+```
+* build own Dockerfile
+```
+$ cat Dockerfile
+FROM server1.cracker.org:5000/myrhel7.0
+
+ADD ks.cracker.org_Kickstart_RHEL7_rhel7.1-beta-core.repo /etc/yum.repos.d/
+
+RUN yum repolist all
+RUN yum update -y --nogpgcheck
+RUN yum install httpd -y --nogpgcheck
+RUN echo "container.example.com" > /etc/hostname
+
+RUN bash -c 'echo "Your web server test is successful" >> /var/www/html/index.html'
+```
+* ensure all untagged and stopped container not leaving on host
+```
+$ sudo docker rm $(sudo docker ps -a -q)
+$ sudo docker rmi $(sudo docker images -q --filter "dangling=true")
+```
