@@ -100,7 +100,7 @@ root@3a75faa81424 3 $ ip a
     inet6 fe80::42:acff:fe11:2/64 scope link
        valid_lft forever preferred_lft forever
 ```
-###### Create new image
+###### Building Docker images [manual method]
 * clean everything to save some spaces and inactive images
 ```
 $ sudo docker rm $(sudo docker ps -a -q)
@@ -137,7 +137,9 @@ server1.cracker.org:5000/myrhel7.0   latest              bef54b8f8a2f        9 m
 ```
 $ sudo docker run -p 8080:80 --rm -i rhel_httpd:latest /usr/sbin/httpd -DFOREGROUND
 ```
-###### Building Docker images
+* you should see Cent OS default home page
+
+###### Building Docker images [using Dockerfile]
 * build own Dockerfile
 ```
 $ cat Dockerfile
@@ -183,4 +185,13 @@ Successfully built d9f0e831ad0e
 ```
 $ sudo docker rm $(sudo docker ps -a -q)
 $ sudo docker rmi $(sudo docker images -q --filter "dangling=true")
+```
+* run the image again
+```
+$ sudo docker run -p 8080:80 --rm -i rhel_httpd:latest /usr/sbin/httpd -DFOREGROUND
+```
+* you should see custom message. If you can notice the different result from the same image while I manually made the image change.
+```
+$ curl vmk2:8080
+Your web server test is successful
 ```
