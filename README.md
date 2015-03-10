@@ -1,9 +1,9 @@
-###### Getting started with Docker
+###### 1. Getting started with Docker
 * [Starting with docker service](https://access.redhat.com/articles/881893)
 * [Using Vagrant to deploy docker](https://github.com/boonchu/dockerlabs/tree/master/Vagrant)
 * Developing code with docker
 
-###### Setup [Private Docker Registry](https://github.com/docker/docker-registry/blob/master/README.md)
+###### 2. Setup [Private Docker Registry](https://github.com/docker/docker-registry/blob/master/README.md)
 * CentOS 7 come with Docker registry. Registry listens to port 5000.
 ```
 $ sudo systemctl status docker-registry
@@ -35,8 +35,8 @@ local:
 drwxr-xr-x. root root system_u:object_r:var_lib_t:s0   images
 drwxr-xr-x. root root system_u:object_r:var_lib_t:s0   repositories
 ```
-###### Using [Red Hat Enterprise 7.x with Docker](https://github.com/boonchu/dockerlabs/blob/master/RHEL7-docker.md)
-###### docker for DevOps
+###### 3. Using [Red Hat Enterprise 7.x with Docker](https://github.com/boonchu/dockerlabs/blob/master/RHEL7-docker.md)
+###### 4. Docker for DevOps
 * start docker container
 ```
 $ sudo docker start python_web
@@ -100,7 +100,7 @@ root@3a75faa81424 3 $ ip a
     inet6 fe80::42:acff:fe11:2/64 scope link
        valid_lft forever preferred_lft forever
 ```
-###### Building Docker images [manual method]
+###### 5. Building Docker images [Option 1: manual method]
 * clean everything to save some spaces and inactive images
 ```
 $ sudo docker rm $(sudo docker ps -a -q)
@@ -139,3 +139,4 @@ $ sudo docker run -p 8080:80 --rm -i rhel_httpd:latest /usr/sbin/httpd -DFOREGRO
 ```
 * you should see Cent OS default home page
 
+###### 6. Building Docker images [Option 2: Dockerfile method](https://github.com/boonchu/dockerlabs/tree/master/httpd)
