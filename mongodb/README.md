@@ -80,5 +80,5 @@ drwxr-x---.  2 mongodb mongodb   18 Mar 11 00:01 .
 ```
 * run the image again
 ```
-$ sudo docker run -d -p 27017:27017 --name mongodb  -v /vol/nfs/mongodb:/var/lib/mongodb" rhel_mongodb
+$ sudo docker run -d -p 27017:27017 --name mongodb  -v /vol/nfs/mongodb:/var/lib/mongodb:rw rhel_mongodb
 ```
