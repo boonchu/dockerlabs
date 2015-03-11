@@ -70,7 +70,7 @@ $ sudo docker rmi $(sudo docker images -q --filter "dangling=true")
 ```
 * enter the image
 ```
-$ sudo docker run -it --name mongodb -p 27017:27017 -v /vol/nfs/mongodb:/var/lib/mongodb" --entrypoint /bin/bash --rm rhel_mongodb
+$ sudo docker run -it --name mongodb -p 27017:27017 -v /vol/nfs/mongodb:/var/lib/mongodb:rw --entrypoint /bin/bash --rm rhel_mongodb
 bash-4.2$ id
 uid=184(mongodb) gid=999(mongodb) groups=999(mongodb)
 bash-4.2$ ls -lta /var/lib/mongodb/
