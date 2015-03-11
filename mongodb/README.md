@@ -67,7 +67,7 @@ Successfully built bbcfe37a2ee6
 ```
 $ sudo docker rm $(sudo docker ps -a -q)
 $ sudo docker rmi $(sudo docker images -q --filter "dangling=true")
-
+```
 * enter the image
 ```
 $ sudo docker run -it --name mongodb -p 27017:27017 -v /vol/nfs/mongodb:/var/lib/mongodb" --entrypoint /bin/bash --rm rhel_mongodb
