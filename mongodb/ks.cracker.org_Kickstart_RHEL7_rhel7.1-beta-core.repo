@@ -1,0 +1,6 @@
+
+[ks.cracker.org_Kickstart_RHEL7_rhel7.1-beta-core]
+name=added from: http://ks.cracker.org/Kickstart/RHEL7/rhel7.1-beta-core
+baseurl=http://ks.cracker.org/Kickstart/RHEL7/rhel7.1-beta-core
+enabled=1
+
