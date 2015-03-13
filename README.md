@@ -140,3 +140,7 @@ $ sudo docker run -p 8080:80 --rm -i rhel_httpd:latest /usr/sbin/httpd -DFOREGRO
 * you should see Cent OS default home page
 
 ###### 6. Building Docker images [Option 2: Dockerfile method](https://github.com/boonchu/dockerlabs/tree/master/httpd)
+###### 7. Understand Copy-on-write storage
+* Union filesystems AUFS, overlayFS
+* snapshot filesystems BTRFS, ZFS
+* copy-on-write block devices, thin snapshots with LVM or device mappers.
