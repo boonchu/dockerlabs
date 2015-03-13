@@ -144,5 +144,6 @@ $ sudo docker run -p 8080:80 --rm -i rhel_httpd:latest /usr/sbin/httpd -DFOREGRO
 * Union filesystems AUFS, overlayFS
 * snapshot filesystems BTRFS, ZFS
 * copy-on-write block devices, thin snapshots with LVM or device mappers.
+
 ###### 8. Reference
-* [Docker meetup][https://speakerdeck.com/vieux/introduction-to-docker-at-elasticbox]
+* [Docker meetup](https://speakerdeck.com/vieux/introduction-to-docker-at-elasticbox)
