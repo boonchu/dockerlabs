@@ -25,6 +25,7 @@ Git commit (client): 39fa2fa/1.3.2
 OS/Arch (client): linux/amd64
 2015/03/14 12:47:38 Get http://localhost:2049/v1.15/version: EOF
 ```
+* [docker-py to connect docker TLS](https://docker-py.readthedocs.org/en/latest/tls/)
 * Working directly with the Docker remote API
 * Docker Container Security
 * Docker in Production (ambassadors, service discovery,  etc.)
