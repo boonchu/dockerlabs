@@ -149,3 +149,5 @@ $ sudo docker run -p 8080:80 --rm -i rhel_httpd:latest /usr/sbin/httpd -DFOREGRO
 * [Docker meetup](https://speakerdeck.com/vieux/introduction-to-docker-at-elasticbox)
 * [cAdvisor from google](https://speakerdeck.com/vieux/introduction-to-docker-at-elasticbox)
 * [Docker Continous Integration](http://mherman.org/blog/2015/03/06/node-with-docker-continuous-integration-and-delivery/#.VQH5KEZZ_de)
+* [Docker with Mesos and Marathon](https://www.youtube.com/watch?feature=player_detailpage&v=hZNGST2vIds)
+* [Docker Mesos setup](https://mesosphere.github.io/marathon/docs/)
