@@ -15,7 +15,7 @@
 * Connecting containers together (links)
 * Container orchestration
 * Using Docker for a Continuous Integration / Continuous Delivery pipeline
-* Securing Docker with TLS
+* [Securing Docker with TLS](https://docs.docker.com/articles/https/)
 * Working directly with the Docker remote API
 * Docker Container Security
 * Docker in Production (ambassadors, service discovery,  etc.)
